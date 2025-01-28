@@ -1,0 +1,18 @@
+.foods {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-4);
+  max-width: 1200px;
+}
+.load-more-button {
+  border-radius: 25px;
+  border: 2px solid var(--color-primary);
+  padding: 10px 20px;
+  width: 100%;
+  margin-top: 20px;
+  cursor: pointer;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  background: var(--color-neutral-100);
+  width: fit-content;
+}
