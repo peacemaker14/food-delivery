@@ -1,0 +1,35 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: var(--spacing-6);
+}
+
+.input {
+  width: 100%;
+  padding: var(--spacing-3) 40px;
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--border-radius-xl);
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+  color: var(--color-neutral-600);
+}
+
+.input:focus {
+  border-color: #007aff;
+}
+
+.input::placeholder {
+  color: var(--color-neutral-300);
+}
+
+.icon {
+  position: absolute;
+  left: var(--spacing-3);
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--spacing-5);
+  height: var(--spacing-5);
+  fill: #999;
+}

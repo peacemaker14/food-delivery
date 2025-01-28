@@ -5,14 +5,26 @@ import styles from "./Foods.module.css";
 
 type FoodsProps = {
   categoryId?: string;
+  searchQuery?: string;
 };
 
-const Foods = ({ categoryId }: FoodsProps) => {
+const Foods = ({ categoryId, searchQuery }: FoodsProps) => {
   const { foods } = useFetchFoods();
   const { displayedData, hasMore, loadMore } = useInfiniteScroll({
-    data: categoryId
-      ? (foods?.filter((food) => food.categoryId === categoryId) ?? [])
-      : (foods ?? []),
+    data:
+      foods?.filter((food) => {
+        if (categoryId && searchQuery) {
+          return (
+            food.categoryId === categoryId &&
+            food.name.toLowerCase().includes(searchQuery.toLowerCase())
+          );
+        } else if (categoryId) {
+          return food.categoryId === categoryId;
+        } else if (searchQuery) {
+          return food.name.toLowerCase().includes(searchQuery.toLowerCase());
+        }
+        return true;
+      }) ?? [],
     itemsPerPage: 12,
   });
 
