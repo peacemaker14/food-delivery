@@ -22,6 +22,7 @@ const FoodCard = ({ food }: { food: Food }) => {
               height="24px"
               width="24px"
               className={styles["card__promotion-icon"]}
+              data-testid="gift-icon"
             />
           )}
           {food.promotion === Promotion.Discount && (
