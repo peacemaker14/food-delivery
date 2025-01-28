@@ -1,18 +1,17 @@
-/* FoodCard.module.css */
-
+/* Card Component */
 .card {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--color-neutral-300);
-  border-radius: var(--border-radius-lg);
+  background-color: var(--color-neutral-0);
+  border-radius: var(--border-radius-xl);
   overflow: hidden;
-  background-color: var(--color-neutral-100);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
   width: 100%;
   max-width: 300px;
+  position: relative; /* For promotion badges */
 }
 
 .card:hover {
@@ -20,56 +19,86 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.cardImage {
+.card__image {
   width: 100%;
-  height: 180px;
+  height: 150px;
   object-fit: cover;
 }
 
-.cardBody {
-  padding: var(--spacing-3);
+.card__body {
+  padding: var(--spacing-4);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-2);
+  gap: var(--spacing-3);
+  align-items: flex-start;
 }
 
-.cardTitle {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-neutral-900);
-  margin: 0;
-}
-
-.cardDescription {
+.card__title {
   font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
   color: var(--color-neutral-600);
   margin: 0;
 }
 
-.cardPrice {
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-primary);
+.card__fields {
+  display: flex;
+  gap: var(--spacing-2);
+  align-items: center;
 }
 
-.cardButton {
-  align-self: flex-start;
-  padding: var(--spacing-2) var(--spacing-4);
-  background-color: var(--color-primary);
-  color: var(--color-neutral-100);
-  border: none;
-  border-radius: var(--border-radius-md);
-  cursor: pointer;
+.card__fields-field {
+  background-color: var(--color-neutral-200);
+  padding: var(--spacing-1) var(--spacing-2);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  border-radius: var(--border-radius-lg);
+  font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  transition: background-color 0.2s ease;
-
-  /* Prevent text overflow */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  color: var(--color-neutral-600);
 }
 
-.cardButton:hover {
-  background-color: var(--color-neutral-900);
+.card__fields-field-icon {
+  color: var(--color-neutral-600);
+}
+
+.card__new-label {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  color: var(--color-new);
+}
+
+.card__promotion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: var(--border-radius-xl);
+  border-bottom-right-radius: var(--border-radius-xl);
+}
+
+.card__promotion--gift {
+  background: var(--color-gift);
+}
+
+.card__promotion--discount {
+  background: var(--color-discount);
+}
+
+.card__promotion--freebies {
+  background: var(--color-freebies);
+}
+
+.card__promotion-icon {
+  color: var(--color-neutral-0);
+}
+
+.card__promotion-text {
+  color: var(--color-neutral-0);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
 }

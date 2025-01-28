@@ -3,10 +3,10 @@ export type Category = {
   name: string;
 };
 
-enum Promotion {
+export enum Promotion {
   Gift = "gift",
   Discount = "discount",
-  OnePlusOne = "1+1",
+  Freebies = "1+1",
 }
 
 export type Food = {

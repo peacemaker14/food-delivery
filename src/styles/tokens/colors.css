@@ -1,7 +1,13 @@
 :root {
   --color-primary: #ffc700;
+  --color-neutral-0: #ffffff; /* White (background) */
   --color-neutral-100: #f9f9f9; /* Lightest grey (web background, tag background) */
+  --color-neutral-200: #f2f2f2; /* Very light grey (borders, dividers) */
   --color-neutral-300: #c0c0c0; /* Light grey (placeholder text) */
-  --color-neutral-600: #4d4d4d; /* Slightly light black (normal body text) */
+  --color-neutral-600: #666666; /* Slightly light black (normal body text) */
   --color-neutral-900: #000000; /* Blackest text */
+  --color-new: #28a745; /* Green color for 'new' labels */
+  --color-gift: #00b1ff;
+  --color-discount: #ff696f;
+  --color-freebies: #8f64ff;
 }
