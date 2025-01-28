@@ -3,10 +3,16 @@ import { useFetchFoods } from "../../hooks/useFetchFoods";
 import useInfiniteScroll from "../../hooks/useInfiniteScroll";
 import styles from "./Foods.module.css";
 
-const Foods = () => {
+type FoodsProps = {
+  categoryId?: string;
+};
+
+const Foods = ({ categoryId }: FoodsProps) => {
   const { foods } = useFetchFoods();
   const { displayedData, hasMore, loadMore } = useInfiniteScroll({
-    data: foods ?? [],
+    data: categoryId
+      ? (foods?.filter((food) => food.categoryId === categoryId) ?? [])
+      : (foods ?? []),
     itemsPerPage: 12,
   });
 

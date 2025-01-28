@@ -1,15 +1,16 @@
 .foods {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--spacing-4);
+  gap: var(--spacing-6);
   max-width: 1200px;
+  padding-top: var(--spacing-6);
 }
 .load-more-button {
   border-radius: 25px;
   border: 2px solid var(--color-primary);
-  padding: 10px 20px;
+  padding: var(--spacing-3) var(--spacing-5);
   width: 100%;
-  margin-top: 20px;
+  margin-top: var(--spacing-6);
   cursor: pointer;
   font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-sm);
