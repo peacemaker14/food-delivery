@@ -12,13 +12,28 @@ mock.module("./CategoryTabs.module.css", () => ({
 }));
 
 const categories = [
-  "All",
-  "Sushi",
-  "Pizza",
-  "Burgers",
-  "Hot Meals",
-  "Desserts",
-  "Drinks",
+  { id: "all", name: "All" },
+
+  {
+    id: "6288a89f1f0152b8c2cd512b",
+    name: "Sushi",
+  },
+  {
+    id: "6288a89f7338764f2071a8a8",
+    name: "Pizza",
+  },
+  {
+    id: "6288a89f70dc8cf93b71609b",
+    name: "Hot Meals",
+  },
+  {
+    id: "6288a89fe6c2fe0b758360fe",
+    name: "Desserts",
+  },
+  {
+    id: "6288a89fac9e970731bfaa7b",
+    name: "Drinks",
+  },
 ];
 
 describe("CategoryTabs", () => {
@@ -28,7 +43,6 @@ describe("CategoryTabs", () => {
     expect(screen.getByText("All")).toBeInTheDocument();
     expect(screen.getByText("Sushi")).toBeInTheDocument();
     expect(screen.getByText("Pizza")).toBeInTheDocument();
-    expect(screen.getByText("Burgers")).toBeInTheDocument();
     expect(screen.getByText("Hot Meals")).toBeInTheDocument();
     expect(screen.getByText("Desserts")).toBeInTheDocument();
     expect(screen.getByText("Drinks")).toBeInTheDocument();
@@ -59,9 +73,9 @@ describe("CategoryTabs", () => {
       />,
     );
 
-    const sushiButton = screen.getByText("Sushi");
+    const sushiButton = screen.getByText(categories[0].name);
     fireEvent.click(sushiButton);
 
-    expect(mockOnCategorySelect).toHaveBeenCalledWith("Sushi");
+    expect(mockOnCategorySelect).toHaveBeenCalledWith(categories[0].id);
   });
 });
