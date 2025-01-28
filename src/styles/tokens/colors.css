@@ -1,0 +1,7 @@
+:root {
+  --color-primary: #ffc700;
+  --color-neutral-100: #f9f9f9; /* Lightest grey (web background, tag background) */
+  --color-neutral-300: #c0c0c0; /* Light grey (placeholder text) */
+  --color-neutral-600: #4d4d4d; /* Slightly light black (normal body text) */
+  --color-neutral-900: #000000; /* Blackest text */
+}

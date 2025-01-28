@@ -1,0 +1,35 @@
+.font-regular {
+  font-weight: var(--font-weight-regular);
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.text-sm {
+  font-size: var(--font-size-sm);
+}
+
+.text-md {
+  font-size: var(--font-size-base);
+}
+
+.text-lg {
+  font-size: var(--font-size-lg);
+}
+
+.text-body {
+  color: var(--color-neutral-600);
+}
+
+.text-placeholder {
+  color: var(--color-neutral-300);
+}
+
+.text-heading {
+  color: var(--color-neutral-900);
+}
