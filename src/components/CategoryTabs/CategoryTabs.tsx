@@ -2,19 +2,12 @@ import { useState } from "react";
 
 import styles from "./CategoryTabs.module.css";
 
-const categories = [
-  "All",
-  "Sushi",
-  "Pizza",
-  "Burgers",
-  "Hot Meals",
-  "Desserts",
-  "Drinks",
-];
+type CategoryTabsProps = {
+  onCategorySelect?: (category: string) => void;
+  categories: string[];
+};
 
-type CategoryTabsProps = { onCategorySelect?: (category: string) => void };
-
-const CategoryTabs = ({ onCategorySelect }: CategoryTabsProps) => {
+const CategoryTabs = ({ onCategorySelect, categories }: CategoryTabsProps) => {
   const [selected, setSelected] = useState("All");
 
   const handleSelect = (category: string) => {
