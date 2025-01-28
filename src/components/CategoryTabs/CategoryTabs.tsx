@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import { Category } from "../../types";
 import styles from "./CategoryTabs.module.css";
 
