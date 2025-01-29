@@ -1,8 +1,8 @@
 .wrapper {
   position: relative;
   width: 100%;
-  max-width: 500px;
-  margin-bottom: var(--spacing-6);
+  max-width: 350px;
+  margin-bottom: var(--spacing-10);
 }
 
 .input {
