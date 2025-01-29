@@ -1,8 +1,9 @@
+import { useMemo } from "react";
+
 import FoodCard from "../../components/FoodCard/FoodCard";
 import { useFetchFoods } from "../../hooks/useFetchFoods";
 import useInfiniteScroll from "../../hooks/useInfiniteScroll";
 import styles from "./Foods.module.css";
-
 type FoodsProps = {
   categoryId?: string;
   searchQuery?: string;
@@ -10,21 +11,28 @@ type FoodsProps = {
 
 const Foods = ({ categoryId, searchQuery }: FoodsProps) => {
   const { foods } = useFetchFoods();
-  const { displayedData, hasMore, loadMore } = useInfiniteScroll({
-    data:
+  const filteredFoods = useMemo(
+    () =>
       foods?.filter((food) => {
         if (categoryId && searchQuery) {
           return (
             food.categoryId === categoryId &&
             food.name.toLowerCase().includes(searchQuery.toLowerCase())
           );
-        } else if (categoryId) {
+        }
+        if (categoryId) {
           return food.categoryId === categoryId;
-        } else if (searchQuery) {
+        }
+        if (searchQuery) {
           return food.name.toLowerCase().includes(searchQuery.toLowerCase());
         }
         return true;
       }) ?? [],
+    [foods, categoryId, searchQuery],
+  );
+
+  const { displayedData, hasMore, loadMore } = useInfiniteScroll({
+    data: filteredFoods,
     itemsPerPage: 12,
   });
 
