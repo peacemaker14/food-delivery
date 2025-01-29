@@ -38,9 +38,11 @@ const Foods = ({ categoryId, searchQuery }: FoodsProps) => {
 
   return (
     <>
-      <div className={styles.foods}>
+      <div data-testid="foods-container" className={styles.foods}>
         {foods
-          ? displayedData.map((food, key) => <FoodCard food={food} key={key} />)
+          ? displayedData.map((food, key) => (
+              <FoodCard data-testid="food-item" food={food} key={key} />
+            ))
           : null}
       </div>
       {hasMore ? (
