@@ -1,4 +1,3 @@
-/* Card Component */
 .card {
   display: flex;
   flex-direction: column;
@@ -10,7 +9,6 @@
     transform 0.2s ease,
     box-shadow 0.2s ease;
   width: 100%;
-  max-width: 300px;
   position: relative; /* For promotion badges */
 }
 
