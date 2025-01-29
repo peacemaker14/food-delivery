@@ -21,4 +21,5 @@ body {
   font-family: var(--font-base);
   background-color: var(--color-neutral-100);
   color: var(--color-neutral-600);
+  font-family: var(--font-family-main);
 }

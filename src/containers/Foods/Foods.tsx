@@ -45,7 +45,7 @@ const Foods = ({ categoryId, searchQuery }: FoodsProps) => {
       </div>
       {hasMore ? (
         <button className={styles["load-more-button"]} onClick={loadMore}>
-          + Load More
+          + Show More
         </button>
       ) : null}
     </>
