@@ -35,7 +35,12 @@ const FoodCard = ({ food }: { food: Food }) => {
       )}
 
       {/* Image */}
-      <img src={food.imageUrl} alt={food.name} className={styles.card__image} />
+      <img
+        src={food.imageUrl}
+        alt={food.name}
+        className={styles.card__image}
+        loading="lazy"
+      />
 
       {/* Card Body */}
       <div className={styles.card__body}>
