@@ -23,7 +23,7 @@ export const createMockFoods = (count = 20): Food[] => {
     description: `Description for food item ${index}`,
     price: 10 + index,
     imageUrl: `https://example.com/food-${index}.jpg`,
-    categoryId: `category-${Math.floor(index / 4)}`, // 4 items per category
+    categoryId: "6288a89f1f0152b8c2cd512b",
     isNew: index % 5 === 0,
     promotion: index % 3 === 0 ? Promotion.Discount : null,
     index: 0,
