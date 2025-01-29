@@ -4,7 +4,7 @@ import { Food, Promotion } from "../../types";
 import { roundToOneDecimal } from "../../utils";
 import styles from "./FoodCard.module.css";
 
-type FoodCardProps = { food: Food; "data-testid": string };
+type FoodCardProps = { food: Food; "data-testid"?: string };
 
 const FoodCard = ({ food, "data-testid": testId }: FoodCardProps) => {
   return (
