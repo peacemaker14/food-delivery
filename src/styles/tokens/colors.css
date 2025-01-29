@@ -10,4 +10,5 @@
   --color-gift: #00b1ff;
   --color-discount: #ff696f;
   --color-freebies: #8f64ff;
+  --color-error: #dc3545; /* Red color for error states and messages */
 }

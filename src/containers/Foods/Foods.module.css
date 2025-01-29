@@ -37,3 +37,15 @@
   width: fit-content;
   color: var(--color-neutral-600);
 }
+
+.loading,
+.error,
+.empty {
+  text-align: center;
+  padding: 2rem;
+  color: var(--color-neutral-600);
+}
+
+.error {
+  color: var(--color-error);
+}

@@ -83,4 +83,32 @@ describe("Foods Component", () => {
     );
     expect(foodItems).toHaveLength(Math.min(12, filteredFoods.length));
   });
+
+  test("shows loading state", () => {
+    mock.module("../../hooks/useFetchFoods", () => ({
+      useFetchFoods: () => ({
+        foods: null,
+        isLoading: true,
+        isError: null,
+      }),
+    }));
+
+    setupTest();
+    expect(screen.getByText("Loading foods...")).toBeInTheDocument();
+  });
+
+  test("shows error state", () => {
+    mock.module("../../hooks/useFetchFoods", () => ({
+      useFetchFoods: () => ({
+        foods: null,
+        isLoading: false,
+        isError: "Failed to fetch",
+      }),
+    }));
+
+    setupTest();
+    expect(
+      screen.getByText("Error loading foods. Please try again later."),
+    ).toBeInTheDocument();
+  });
 });

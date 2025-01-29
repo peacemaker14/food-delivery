@@ -10,7 +10,7 @@ type FoodsProps = {
 };
 
 const Foods = ({ categoryId, searchQuery }: FoodsProps) => {
-  const { foods } = useFetchFoods();
+  const { foods, isLoading, isError } = useFetchFoods();
   const filteredFoods = useMemo(
     () =>
       foods?.filter((food) => {
@@ -35,6 +35,18 @@ const Foods = ({ categoryId, searchQuery }: FoodsProps) => {
     data: filteredFoods,
     itemsPerPage: 12,
   });
+
+  if (isLoading) {
+    return <div className={styles.loading}>Loading foods...</div>;
+  }
+
+  if (isError) {
+    return (
+      <div className={styles.error}>
+        Error loading foods. Please try again later.
+      </div>
+    );
+  }
 
   return (
     <>
