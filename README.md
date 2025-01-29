@@ -1,34 +1,79 @@
-# Food Delivery Web
+# Food Delivery Website
 
-A web application for food delivery services featuring categorized food listings and search functionality.
+A modern and responsive frontend project for a food delivery website built with **ReactJS**, **TypeScript**, and **Vite**.
 
 ## Features
 
-- Display food items with category filters
-- Search functionality to find specific food items
-- Responsive web interface
+- **Show List of Foods**: Display a list of food items fetched from an API
+- **Filter by Category**: Filter food items based on their category
+- **Search Food**: Search for food items by name
+- **Pagination with Infinite Scroll**: Load more food items dynamically as the user scrolls
 
-## Technologies Used
+## Setup Instructions
 
-- [Vite](https://vitejs.dev/) - Next Generation Frontend Tooling
-- [React](https://reactjs.org/) - JavaScript UI Library
-- [TypeScript](https://www.typescriptlang.org/) - JavaScript with syntax for types
+1. **Clone the repository**
 
-## Setup
+   ```bash
+   git clone git@github.com:peacemaker14/food-delivery.git
+   ```
 
-Make sure you have [Bun](https://bun.sh/) installed on your system.
+2. **Navigate to the project directory**
+
+   ```bash
+   cd food-delivery
+   ```
+
+3. **Install dependencies**
+   ```bash
+   bun install
+   ```
+
+## Usage
+
+### Development
 
 ```bash
-# Install dependencies
-bun install
-
-# Run development server
 bun dev
+```
 
-# Build for production
+Open your browser and navigate to http://localhost:5173
+
+### Production Build
+
+```bash
 bun build
 ```
 
-## Running the Project
+Generates an optimized production build in the `dist` directory
 
-After installation, open your browser and navigate to `http://localhost:5173/` to view the application.
+### Running Tests
+
+```bash
+bun test
+```
+
+## Technologies Used
+
+- **Bun**: Fast all-in-one JavaScript runtime
+- **Vite**: Next-generation frontend tooling
+- **ReactJS**: A JavaScript library for building user interfaces
+- **TypeScript**: A typed superset of JavaScript
+- **Lightning CSS**: A fast and modern CSS processor
+- **SWR**: A React Hooks library for data fetching
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+   ```bash
+   git checkout -b feat/your-feature-name
+   ```
+3. Commit your changes
+   ```bash
+   git commit -m "Add your commit message here"
+   ```
+4. Push your branch
+   ```bash
+   git push origin feat/your-feature-name
+   ```
+5. Open a pull request
